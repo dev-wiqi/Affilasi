@@ -3,7 +3,7 @@
 if (!defined('BASEPATH'))
     exit('No direct script access allowed');
 
-class Models_basic extends CI_model {
+class Model_basic extends CI_model {
     /*
      * BRP Application V.1.0 Copyright 2015
      * Build Date : 07 Agustus 2015

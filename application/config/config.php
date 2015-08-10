@@ -29,7 +29,7 @@ $config['base_url'] = 'http://localhost/Affilasi/';
 | variable so that it is blank.
 |
 */
-$config['index_page'] = 'index.php';
+$config['index_page'] = '';
 
 /*
 |--------------------------------------------------------------------------
@@ -305,7 +305,7 @@ $config['cache_query_string'] = FALSE;
 | http://codeigniter.com/user_guide/libraries/encryption.html
 |
 */
-$config['encryption_key'] = 'wiqidevelopment';
+$config['encryption_key'] = 'pengamatbangsa';
 
 /*
 |--------------------------------------------------------------------------
@@ -356,7 +356,7 @@ $config['encryption_key'] = 'wiqidevelopment';
 |
 */
 $config['sess_driver'] = 'files';
-$config['sess_cookie_name'] = 'brp_sess';
+$config['sess_cookie_name'] = 'brp-session';
 $config['sess_expiration'] = 7200;
 $config['sess_save_path'] = NULL;
 $config['sess_match_ip'] = FALSE;
@@ -510,4 +510,4 @@ $config['modules_locations'] = array(
     APPPATH.'mod_core/' => '../mod_core/',
 );
 
-$config['image_url'] = 'http://img.gedungperkawinan.com/';
+$config['image_url'] = 'http://img.brpballroom.com/';
