@@ -49,10 +49,18 @@
 	
 	<!-- LESS 2 CSS -->
 	<script src="theme/scripts/less-1.3.3.min.js"></script>
-	
+        <style>
+            @media screen and (max-width:980px){
+                .banner-right{
+                    width:auto;
+                    float:right;    
+                }
+                
+            }
+        </style>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" /></head>
 <body>
-	
+		
 	<div class="navbar main">
 	
 		<div class="container">
@@ -63,23 +71,35 @@
 			</div>
 		</div>
 	</div>
-	
+        <!--<div class="banner-right">
+        <img class="responsive-img" src="theme/images/banner2.jpg"/>
+        </div>-->    
 	<!-- Start Content -->
 	<div class="container-fluid fixed">
-		
-				
-		<div id="content"><ul class="breadcrumb">
-	<li><a href="#" class="glyphicons home"><i></i> Affiliate</a></li>
-	<li class="divider"></li>
-	<li>Register</li>
-	<li class="divider"></li>
-	<li>Customer</li>
-</ul>
-<div class="separator"></div>
+	 <?php echo $this->session->flashdata("result_succes"); ?>
+            <?php echo $this->session->flashdata("result_email"); ?>
+            <div id="content">
+                <div class="row-fluid">
+                    <div class="span6">
+                <div class="well">
+                    <center><h5 style="color:#39c4e0"><strong>Penawaran Terbatas, 11 s/d 13 September 2015</strong></h5>
+                    <br/>Hanya di booth <strong>BRP Ballroom (Smesco,Sucofindo,Sovereign) di Gebyar Pernikahan Indonesia</strong>
+                    <br/><strong>CASHBACK UNTIL 20juta & Free : Honeymoon/pre-wed photo/photobooth</strong>
+                    <br/><i>@BalaiKartini Booth C2A & Booth A3</i>
+                    <br/><strong>Info : 087882481717</strong></center>
+                </div>
+                    </div>
+                    <div class="span6">
+                        <a href="http://gedungperkawinan.com/"><img src="theme/images/bann.jpg" height="300px" width="420px"/></a>
+                    </div>
+                </div>
+                     
+            </div>
+        <div id="content">  
 
 <h3 class="glyphicons show_thumbnails_with_lines"><i></i> Register Affiliasi</h3>
 
-<form class="form-horizontal" style="margin-bottom: 0;" id="validateSubmitForm" method="POST" action="" autocomplete="off" />
+<form class="form-horizontal" style="margin-bottom: 0;" method="POST" action="<?php echo base_url(); ?>Aff/submit.aspx" autocomplete="off" />
 	<h4>Data Member Affilasi</h4>
 	<hr class="separator line" />
 	<div class="row">
@@ -111,26 +131,26 @@
 			</div>
 			<div class="control-group">
 				<label class="control-label" for="lastname">Nomor Telp</label>
-				<div class="controls"><input class="span4" id="lastname" name="contact" type="text" /></div>
+				<div class="controls"><input class="span4" id="lastname" name="contactcouple" type="text" /></div>
 			</div>
 			<div class="control-group">
 				<label class="control-label" for="username">Email</label>
-				<div class="controls"><input class="span4" id="username" name="email" type="email" /></div>
+				<div class="controls"><input class="span4" id="username" name="emailcouple" type="email" /></div>
 			</div>
 		</div>
 		<div class="span6">
-			<div class="control-group">
+                        <div class="control-group">
+				<label class="control-label" for="password">Ballroom</label>
+                                <div class="controls"><select class="span4" name="ballroom"><option value="sucofindo">Sucofindo Ballroom</option><option value="smesco">Smesco Ballroom</option><option value="sovereign">Sovereign Ballroom</option></select></div>
+			</div>
+			<!--<div class="control-group">
 				<label class="control-label" for="password">Paket Pernikahan</label>
-                                <div class="controls"><select class="span4" name="wedding"><optgroup label="Sucofindo"><option value="edelweissucofindo">Edelweis Package</option></optgroup><optgroup label="Smesco"><option value="traditionalsmesco">Traditional Package</option></optgroup><optgroup label="Sovereign"><option value="internationalsovereign">Interntional Package</option></optgroup></select></div>
-			</div>
+                                <div class="controls"><select class="span4" name="wedding"><option value="edelweiss">Edelweis Package</option><option value="traditional">Traditional Package</option><option value="international">Interntional Package</option></select></div>
+			</div>-->
 			<div class="control-group">
-				<label class="control-label" for="confirm_password">Confirm passwor</label>
-				<div class="controls"><input class="span4" id="confirm_password" name="confirm_password" type="password" /></div>
-			</div>
-			<div class="control-group">
-				<label class="control-label" for="email">E-mail</label>
-				<div class="controls"><input class="span4" id="email" name="email" type="email" /></div>
-			</div>
+				<label class="control-label" for="confirm_password">Tanggal Acara</label>
+				<div class="controls"><input class="span4" id="datepicker" name="date" value class="hasDatepicker" /></div>
+			</div>			
 		</div>
 	</div>
 	
@@ -157,11 +177,11 @@
 	</div>
 	
 </form>		
-				
+
 		</div>
-		
+
 	</div>
-	
+		
 	<!-- JQueryUI v1.9.2 -->
 	<script src="theme/scripts/jquery-ui-1.9.2.custom/js/jquery-ui-1.9.2.custom.min.js"></script>
 	

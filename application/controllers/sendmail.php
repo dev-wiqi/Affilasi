@@ -3,7 +3,7 @@
 if (!defined('BASEPATH'))
     exit('No direct script access allowed');
 
-class Model_basic extends CI_model {
+class sendmail extends CI_Controller {
     /*
      * BRP Application V.1.0 Copyright 2015
      * Build Date : 07 Agustus 2015
@@ -11,11 +11,7 @@ class Model_basic extends CI_model {
      * Website : http://wiqi.co
      */
     
-    function affinsert($data){
-        
-    }
-    
-    function mail($member,$cc,$message){
+    function index(){
         $config['protocol'] = 'smtp';
         $config['smtp_host'] = 'ssl://smtp.googlemail.com';
         $config['smtp_port'] = 465;
@@ -29,11 +25,13 @@ class Model_basic extends CI_model {
         $this->load->library('email',$config);
         $this->email->set_newline("\r\n");
         $this->email->from('brppromo@gmail.com','Program Affiliasi BRP Ballroom');
-        $this->email->to($member);
-        $this->email->cc($cc);
+        $this->email->to('dev@wiqi.co');
         $this->email->subject('Program Affiliasi BRP');
-        $this->email->message($message);
+        $this->email->message('<strong>PROMOSI</strong>');
+        
         
         $this->email->send();
+        
+        echo $this->email->print_debugger();
     }
 }
